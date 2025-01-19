@@ -28,6 +28,7 @@
 - Através da função 'reverseWordsInASentence' é invertida palavras em uma frase, mantendo as palavras na ordem que está.
   Nessa função, é necessário separar as palavras em um array, utilizando o split. Com as frases separdas, é feito um foreach
   para reverter utilizando o StringBuilder e adicionar o espaço entre elas.
+  Obs: Ajustado código após a falha no test, estava falhando pois estava lançando um espaço a mais na prieira palavra.
 
 ## Exercício 6 - Fechando em soma
 - Através da função 'returnSumOfDigits' é feita a soma conforme solicitado.

@@ -1,3 +1,5 @@
+package exercises;
+
 public class UtilityMethods {
 
     //EXERCICIO UM
@@ -65,10 +67,14 @@ public class UtilityMethods {
         StringBuilder newSentence = new StringBuilder();
         String[] wordsSeparete = sentence.split(" ");
 
+        boolean firstWord = true;
+
         for (String word : wordsSeparete) {
-            StringBuilder reversedWord = new StringBuilder(word);
-            newSentence.append(reversedWord.reverse());
-            newSentence.append(" ");
+            if (!firstWord) {
+                newSentence.append(" ");
+            }
+            newSentence.append(new StringBuilder(word).reverse());
+            firstWord = false;
         }
         return newSentence;
     }

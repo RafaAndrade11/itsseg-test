@@ -1,6 +1,8 @@
+package exercises;
+
 import java.util.Scanner;
 
-public class ExerciseFive {
+public class ExerciseTwo {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         UtilityMethods utilityMethods = new UtilityMethods();
@@ -8,6 +10,8 @@ public class ExerciseFive {
         utilityMethods.typeYourSentence();
         String sentence = scan.nextLine();
 
-        System.out.println(utilityMethods.reverseWordsInASentence(sentence));
+        System.out.println("Sua frase censurada ficou: " + utilityMethods.removingVowelsInOffensiveComments(sentence));
+
+
     }
 }
