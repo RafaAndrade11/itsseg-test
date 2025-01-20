@@ -1,10 +1,23 @@
 package exercises;
 
 public class UtilityMethods {
+    //declarando essas variaveis como final para testarmos se estarão corretas utilizando os Getters
+    private final String allAlphabetLetters = "abcdefghijklmnopqrstuvwyxz";
+    private final String vowels = "aeiouAEIOU";
+
+    public String getAllAlphabetLetters() {
+        return allAlphabetLetters;
+    }
+
+    public String getVowels() {
+        return vowels;
+    }
 
     //EXERCICIO UM
     public boolean checkSentenceIsPangrammatic(String sentence) {
-        String allAlphabetLetters = "abcdefghijklmnopqrstuvwyxz";
+        if (sentence.trim().isEmpty()) {
+            throw new IllegalArgumentException("A sentença não pode ser vazia.");
+        }
 
         sentence = sentence.toLowerCase();
 
@@ -18,7 +31,10 @@ public class UtilityMethods {
 
     //EXERCICIO DOIS
     public String removingVowelsInOffensiveComments(String sentence) {
-        String vowels = "aeiouAEIOU";
+        if (sentence.trim().isEmpty()) {
+            throw new IllegalArgumentException("A sentença não pode ser vazia.");
+        }
+
         StringBuilder newSentence = new StringBuilder();
 
         for (char letter : sentence.toCharArray()) {
@@ -32,6 +48,10 @@ public class UtilityMethods {
 
     //EXERCICIO TRES
     public String findHighestAndLowestNumber(String sentenceNumbers) {
+        if (sentenceNumbers.trim().isEmpty()) {
+            throw new IllegalArgumentException("A sentença não pode ser vazia.");
+        }
+
         String[] numbers = sentenceNumbers.split(" ");
 
         int highestNumer = Integer.MIN_VALUE;
@@ -52,6 +72,9 @@ public class UtilityMethods {
 
     //EXERCICIO QUATRO
     public boolean checkFirsStringEndsWithSecondString(String firstString, String secondString) {
+        if (firstString.trim().isEmpty() || secondString.trim().isEmpty()) {
+            throw new IllegalArgumentException("As strings não podem ser vazias.");
+        }
         if (secondString.length() > firstString.length()) {
             return false;
         }
@@ -64,6 +87,10 @@ public class UtilityMethods {
 
     //EXERCICIO CINCO
     public StringBuilder reverseWordsInASentence(String sentence) {
+        if (sentence.trim().isEmpty()) {
+            throw new IllegalArgumentException("A sentença não pode ser vazia.");
+        }
+
         StringBuilder newSentence = new StringBuilder();
         String[] wordsSeparete = sentence.split(" ");
 
@@ -81,6 +108,10 @@ public class UtilityMethods {
 
     //EXERCICIO SEIS
     public int returnSumOfDigits(int number) {
+        if (number < 0) {
+            throw new IllegalArgumentException("O número não pode ser negativo.");
+        }
+
         String numberStr = Integer.toString(number);
 
         int sum = 0;

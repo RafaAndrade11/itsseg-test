@@ -24,4 +24,16 @@ public class ExerciseOneTest {
         String pangram3 = "";
         assertFalse(utilityMethods.checkSentenceIsPangrammatic(pangram3));
     }
+
+    @Test
+    public void testVariableAllAlphabetLettersContainAllAlphabetLetters() {
+        String allAlphabetLetters = utilityMethods.getAllAlphabetLetters();
+
+        assertEquals(String.valueOf(26), 26, allAlphabetLetters.length());
+
+        for (char letter = 'a'; letter <= 'z'; letter++) {
+            assertTrue("A variável allAlphabetLetters deve conter a letra: " + letter,
+                    allAlphabetLetters.contains(String.valueOf(letter)));
+        }
+    }
 }
