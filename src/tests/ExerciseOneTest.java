@@ -21,8 +21,9 @@ public class ExerciseOneTest {
 
     @Test
     public void shouldReturnFalseWhenSentenceIsEmpty() {
+        String allAlphabetLetters = utilityMethods.getAllAlphabetLetters();
         String pangram3 = "";
-        assertFalse(utilityMethods.checkSentenceIsPangrammatic(pangram3));
+        assertThrows(IllegalArgumentException.class, () -> utilityMethods.checkSentenceIsPangrammatic(pangram3));
     }
 
     @Test
